@@ -1,0 +1,295 @@
+.entrenador-interactivo {
+  background-color: var(--bg-primary);
+  border-radius: var(--border-radius-lg);
+  padding: var(--spacing-md);
+  box-shadow: var(--shadow-md);
+  animation: fadeIn 0.6s ease-out;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.entrenador-interactivo h2 {
+  font-size: var(--font-size-xl);
+  color: var(--text-primary);
+  margin-bottom: var(--spacing-sm);
+  text-align: center;
+  animation: slideIn 0.5s ease-out;
+}
+
+.ejercicio-contenedor {
+  background-color: var(--bg-secondary);
+  border-radius: var(--border-radius);
+  padding: var(--spacing-md);
+  margin-bottom: var(--spacing-md);
+  min-height: 150px;
+  animation: fadeIn 0.5s ease-out;
+  flex: 1;
+  overflow-y: auto;
+}
+
+.texto-ejercicio {
+  font-size: var(--font-size-base);
+  line-height: 1.8;
+  color: var(--text-primary);
+}
+
+.hueco-container {
+  display: inline-grid;
+  margin: 0 0.25rem;
+  vertical-align: bottom;
+  position: relative;
+}
+
+.hueco-sizer {
+  grid-area: 1 / 1;
+  padding: 0.4rem 0.5rem;
+  border: 2px solid transparent;
+  font-size: var(--font-size-sm);
+  font-family: var(--font-family);
+  visibility: hidden;
+  white-space: pre;
+  min-width: 2ch;
+}
+
+.hueco-input {
+  grid-area: 1 / 1;
+  padding: 0.4rem 0.5rem;
+  border: 2px solid var(--border-color);
+  border-radius: var(--border-radius);
+  font-size: var(--font-size-sm);
+  font-family: var(--font-family);
+  width: 100%;
+  min-width: 0;
+  transition: all var(--transition-fast);
+  box-sizing: border-box;
+}
+
+.hueco-input:focus {
+  outline: none;
+  border-color: #2196F3;
+  box-shadow: 0 0 0 3px rgba(33, 150, 243, 0.1);
+  transform: scale(1.02);
+}
+
+.hueco-input:disabled {
+  background-color: var(--bg-secondary);
+  cursor: not-allowed;
+}
+
+.hueco-input.estado-correcto {
+  border-color: var(--color-correcto);
+  background-color: rgba(76, 175, 80, 0.1);
+  color: var(--color-correcto);
+  font-weight: 600;
+  animation: success 0.4s ease-out;
+}
+
+.hueco-input.estado-incorrecto {
+  border-color: var(--color-incorrecto);
+  background-color: rgba(244, 67, 54, 0.1);
+  animation: shake 0.5s ease-out;
+}
+
+.hueco-input.estado-semi-correcto {
+  border-color: var(--color-semi-correcto);
+  background-color: rgba(255, 152, 0, 0.1);
+  animation: pulse 0.6s ease-out;
+}
+
+.correccion {
+  grid-area: 2 / 1;
+  display: flex;
+  align-items: center;
+  margin-top: 0.25rem;
+  font-size: var(--font-size-sm);
+  gap: 0.25rem;
+  animation: slideIn 0.3s ease-out;
+}
+
+.correccion-incorrecto {
+  color: var(--color-incorrecto);
+}
+
+.correccion-semi-correcto {
+  color: var(--color-semi-correcto);
+}
+
+.tachado {
+  text-decoration: line-through;
+  opacity: 0.7;
+}
+
+.respuesta-correcta {
+  font-weight: 600;
+}
+
+.botones-container {
+  display: flex;
+  justify-content: center;
+  gap: var(--spacing-sm);
+  margin-bottom: var(--spacing-md);
+}
+
+.btn {
+  padding: 0.6rem 1.5rem;
+  font-size: var(--font-size-sm);
+  font-weight: 600;
+  border: none;
+  border-radius: var(--border-radius);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  box-shadow: var(--shadow-sm);
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+
+.btn:active {
+  transform: translateY(0);
+}
+
+.btn-corregir {
+  background-color: #2196F3;
+  color: white;
+}
+
+.btn-corregir:hover {
+  background-color: #1976D2;
+}
+
+.btn-siguiente {
+  background-color: #4CAF50;
+  color: white;
+}
+
+.btn-siguiente:hover {
+  background-color: #388E3C;
+}
+
+.resumen-resultados {
+  display: flex;
+  justify-content: center;
+  gap: var(--spacing-sm);
+  flex-wrap: wrap;
+  animation: fadeIn 0.5s ease-out;
+}
+
+.resumen-item {
+  display: flex;
+  align-items: center;
+}
+
+.badge {
+  padding: 0.4rem 0.8rem;
+  border-radius: 16px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: white;
+}
+
+.badge-correcto {
+  background-color: var(--color-correcto);
+}
+
+.badge-semi-correcto {
+  background-color: var(--color-semi-correcto);
+}
+
+.badge-incorrecto {
+  background-color: var(--color-incorrecto);
+}
+
+@media (max-width: 1024px) {
+  .secciones-container {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .entrenador-interactivo {
+    padding: var(--spacing-md);
+  }
+
+  .ejercicio-contenedor {
+    padding: var(--spacing-md);
+  }
+
+  .texto-ejercicio {
+    font-size: var(--font-size-base);
+    line-height: 1.8;
+  }
+
+  .hueco-container {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin: 0.5rem 0;
+  }
+
+  .hueco-input {
+    width: 100%;
+    min-width: unset;
+    font-size: var(--font-size-sm);
+  }
+
+  .botones-container {
+    flex-direction: column;
+  }
+
+  .btn {
+    width: 100%;
+  }
+
+  .resumen-resultados {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .badge {
+    width: 100%;
+    text-align: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .infografia-pasado {
+    padding: var(--spacing-sm);
+  }
+
+  .infografia-pasado h2 {
+    font-size: var(--font-size-lg);
+  }
+
+  .seccion-tiempo {
+    padding: var(--spacing-sm);
+  }
+
+  .seccion-titulo {
+    font-size: var(--font-size-lg);
+  }
+
+  .marcadores-lista {
+    gap: 0.25rem;
+  }
+
+  .marcador {
+    font-size: 0.75rem;
+    padding: 0.2rem 0.5rem;
+  }
+
+  .entrenador-interactivo {
+    padding: var(--spacing-sm);
+  }
+
+  .entrenador-interactivo h2 {
+    font-size: var(--font-size-lg);
+  }
+
+  .btn {
+    padding: 0.6rem 1.5rem;
+    font-size: var(--font-size-sm);
+  }
+}

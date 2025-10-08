@@ -1,0 +1,1 @@
+{"root":["./src/App.tsx","./src/main.tsx","./src/vite-env.d.ts","./src/components/EntrenadorInteractivo.tsx","./src/components/InfografiaPasado.tsx","./src/types/index.ts","./src/utils/correccionUtils.ts","./src/utils/ejercicioUtils.ts"],"version":"5.6.3"}

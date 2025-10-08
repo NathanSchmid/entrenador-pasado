@@ -1,0 +1,265 @@
+.infografia-pasado {
+  background-color: var(--bg-primary);
+  border-radius: var(--border-radius-lg);
+  padding: var(--spacing-md);
+  box-shadow: var(--shadow-md);
+  animation: fadeIn 0.6s ease-out;
+  height: 100%;
+  overflow-y: auto;
+}
+
+.infografia-pasado h2 {
+  font-size: var(--font-size-lg);
+  color: var(--text-primary);
+  margin-bottom: var(--spacing-xs);
+  text-align: center;
+  animation: slideIn 0.5s ease-out;
+}
+
+.secciones-container {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-xs);
+}
+
+.seccion-tiempo {
+  background-color: var(--bg-card);
+  border-left: 3px solid;
+  border-radius: var(--border-radius);
+  padding: var(--spacing-xs);
+  box-shadow: var(--shadow-sm);
+  transition: transform var(--transition-base), box-shadow var(--transition-base);
+  animation: fadeIn 0.6s ease-out;
+  animation-fill-mode: both;
+}
+
+.seccion-tiempo:nth-child(1) {
+  animation-delay: 0.1s;
+}
+
+.seccion-tiempo:nth-child(2) {
+  animation-delay: 0.2s;
+}
+
+.seccion-tiempo:nth-child(3) {
+  animation-delay: 0.3s;
+}
+
+.seccion-tiempo:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-lg);
+}
+
+.seccion-titulo {
+  font-size: var(--font-size-base);
+  margin-bottom: 0.25rem;
+  font-weight: 600;
+}
+
+.seccion-contenido {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.seccion-contenido h4 {
+  font-size: var(--font-size-sm);
+  color: var(--text-primary);
+  margin-bottom: 0.25rem;
+  font-weight: 600;
+}
+
+.descripcion p {
+  color: var(--text-secondary);
+  line-height: 1.4;
+  font-size: 0.8rem;
+}
+
+.ejemplos-toggle,
+.cuando-toggle {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: color var(--transition-fast);
+}
+
+.ejemplos-toggle:hover,
+.cuando-toggle:hover {
+  opacity: 0.7;
+}
+
+.cuando-usar ul,
+.ejemplos ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+.cuando-usar li,
+.ejemplos li {
+  color: var(--text-secondary);
+  padding-left: var(--spacing-sm);
+  position: relative;
+  margin-bottom: 0.2rem;
+  font-size: 0.8rem;
+}
+
+.cuando-usar li::before,
+.ejemplos li::before {
+  content: '•';
+  position: absolute;
+  left: 0;
+  color: var(--text-light);
+}
+
+.marcadores-lista {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--spacing-xs);
+}
+
+.marcador {
+  padding: 0.2rem 0.5rem;
+  border-radius: 12px;
+  font-size: 0.75rem;
+  font-weight: 500;
+  display: inline-block;
+  transition: transform var(--transition-fast), box-shadow var(--transition-fast);
+}
+
+.marcador:hover {
+  transform: scale(1.05);
+  box-shadow: var(--shadow-sm);
+}
+
+.linea-tiempo {
+  margin-top: 0.25rem;
+  padding: 0.4rem;
+  position: relative;
+  min-height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(0, 0, 0, 0.02);
+  border-radius: var(--border-radius);
+}
+
+/* Pretérito Perfecto - Conexión pasado-presente */
+.linea-tiempo.perfecto {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--spacing-sm);
+}
+
+.punto-pasado {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.linea-conexion {
+  height: 3px;
+  flex-grow: 1;
+  border-radius: 2px;
+  position: relative;
+}
+
+.linea-conexion::after {
+  content: '→';
+  position: absolute;
+  right: -8px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: inherit;
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+.punto-presente {
+  padding: 0.2rem 0.5rem;
+  border-radius: 12px;
+  color: white;
+  font-size: 0.65rem;
+  font-weight: bold;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+/* Pretérito Indefinido - Punto único completado */
+.linea-tiempo.indefinido {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.linea-base {
+  width: 100%;
+  height: 3px;
+  border-radius: 2px;
+  position: relative;
+}
+
+.punto-unico {
+  position: absolute;
+  top: 50%;
+  left: 30%;
+  transform: translate(-50%, -50%);
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-weight: bold;
+  font-size: 0.7rem;
+  box-shadow: 0 0 0 3px var(--bg-card);
+}
+
+.etiqueta-pasado {
+  font-size: 0.65rem;
+  color: var(--text-secondary);
+  text-align: center;
+  font-weight: 600;
+}
+
+/* Pretérito Imperfecto - Línea continua/ondulada */
+.linea-tiempo.imperfecto {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.linea-continua {
+  width: 100%;
+  height: 6px;
+  border-radius: 3px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  padding: 0 0.5rem;
+}
+
+.onda {
+  width: 14px;
+  height: 14px;
+  border: 2px solid;
+  border-radius: 50%;
+  background-color: transparent;
+}
+
+@media (max-width: 768px) {
+  .secciones-container {
+    grid-template-columns: 1fr;
+  }
+
+  .infografia-pasado {
+    padding: var(--spacing-md);
+  }
+
+  .infografia-pasado h2 {
+    font-size: var(--font-size-xl);
+  }
+}
