@@ -117,7 +117,11 @@ const EntrenadorInteractivo = () => {
 
   return (
     <div className="entrenador-interactivo">
-      <h2>Entrenador Interactivo</h2>
+      <h2>✍️ Entrenador Interactivo</h2>
+
+      <div className="instrucciones">
+        <p>Completa los espacios con la forma correcta del verbo en pasado.</p>
+      </div>
 
       <div className="ejercicio-contenedor">
         {renderTextoConHuecos()}

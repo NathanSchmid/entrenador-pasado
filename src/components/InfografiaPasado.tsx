@@ -17,35 +17,30 @@ const SeccionTiempo = memo(({ titulo, color, descripcion, cuando, marcadores, ej
   const renderLineaTiempo = () => {
     switch (tipoLinea) {
       case 'perfecto':
-        // Línea que conecta pasado reciente con presente
+        // Pasado reciente conectado con el presente
         return (
-          <div className="linea-tiempo perfecto" style={{ borderColor: color }}>
-            <div className="punto-pasado" style={{ backgroundColor: color }}></div>
-            <div className="linea-conexion" style={{ backgroundColor: color }}></div>
-            <div className="punto-presente" style={{ backgroundColor: color }}>AHORA</div>
+          <div className="linea-tiempo perfecto">
+            <span className="emoji-tiempo">📅</span>
+            <span className="texto-tiempo" style={{ color }}>pasado reciente</span>
+            <span className="flecha-tiempo" style={{ color }}>→</span>
+            <span className="emoji-tiempo">🎯</span>
+            <span className="texto-tiempo texto-ahora" style={{ color, fontWeight: 'bold' }}>AHORA</span>
           </div>
         )
       case 'indefinido':
-        // Punto único en el pasado (acción completada)
+        // Acción completa en el pasado
         return (
-          <div className="linea-tiempo indefinido" style={{ borderColor: color }}>
-            <div className="linea-base" style={{ backgroundColor: color }}></div>
-            <div className="punto-unico" style={{ backgroundColor: color }}>
-              <span>✓</span>
-            </div>
-            <div className="etiqueta-pasado">PASADO</div>
+          <div className="linea-tiempo indefinido">
+            <span className="emoji-tiempo">✅</span>
+            <span className="texto-tiempo" style={{ color }}>acción completa en el pasado</span>
           </div>
         )
       case 'imperfecto':
-        // Línea continua (acción habitual/en progreso)
+        // Acción habitual/continua
         return (
-          <div className="linea-tiempo imperfecto" style={{ borderColor: color }}>
-            <div className="linea-continua" style={{ backgroundColor: color }}>
-              <div className="onda" style={{ borderColor: color }}></div>
-              <div className="onda" style={{ borderColor: color }}></div>
-              <div className="onda" style={{ borderColor: color }}></div>
-            </div>
-            <div className="etiqueta-pasado">PASADO (habitual/continuo)</div>
+          <div className="linea-tiempo imperfecto">
+            <span className="emoji-tiempo">🔄</span>
+            <span className="texto-tiempo" style={{ color }}>acción habitual/continua</span>
           </div>
         )
     }
